@@ -1,4 +1,7 @@
 # AoE MonkIt
+
+<img src="Monk_aoe2DE.webp" width="100">
+
 ## Important
 This is only for educational purposes. It's not meant to be used in competitive games.
 
