@@ -18,7 +18,7 @@ type Config struct {
 	Keystrokes struct {
 		Record   []string `ini:"record"`
 		Deselect []string `ini:"deselect"`
-	}
+	} `ini:"Keystrokes"`
 }
 
 func Setup() (*Config, error) {
