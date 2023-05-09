@@ -9,8 +9,8 @@ import (
 )
 
 func init() {
-	robotgo.MouseSleep = 10
-	robotgo.KeySleep = 10
+	robotgo.MouseSleep = 5
+	robotgo.KeySleep = 5
 }
 
 func RegisterHooks(cfg *config.Config) {
