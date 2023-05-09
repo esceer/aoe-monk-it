@@ -18,6 +18,7 @@ type Config struct {
 	Keystrokes struct {
 		Record   []string `ini:"record"`
 		Deselect []string `ini:"deselect"`
+		Toggle   []string `ini:"toggle"`
 	} `ini:"Keystrokes"`
 }
 
@@ -71,6 +72,10 @@ func createIniFile() (*ini.File, error) {
 		return nil, err
 	}
 	_, err = sec2.NewKey("deselect", "c")
+	if err != nil {
+		return nil, err
+	}
+	_, err = sec2.NewKey("toggle", "ctrl,p")
 	if err != nil {
 		return nil, err
 	}

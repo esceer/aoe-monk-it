@@ -8,9 +8,13 @@ import (
 	hook "github.com/robotn/gohook"
 )
 
+var (
+	isLive = true
+)
+
 func init() {
-	robotgo.MouseSleep = 5
-	robotgo.KeySleep = 5
+	robotgo.MouseSleep = 10
+	robotgo.KeySleep = 10
 }
 
 func RegisterHooks(cfg *config.Config) {
@@ -19,8 +23,19 @@ func RegisterHooks(cfg *config.Config) {
 		recordPosition(cfg)
 	})
 	hook.Register(hook.KeyDown, cfg.Keystrokes.Deselect, func(e hook.Event) {
-		fmt.Println("monk it!")
-		deselectFromGroup(cfg)
+		if isLive {
+			fmt.Println("monk it!")
+			deselectFromGroup(cfg)
+		}
+	})
+	hook.Register(hook.KeyDown, cfg.Keystrokes.Toggle, func(e hook.Event) {
+		switch isLive {
+		case true:
+			fmt.Println("toggle off")
+		case false:
+			fmt.Println("toggle on")
+		}
+		isLive = !isLive
 	})
 	fmt.Println("Listening to events...")
 	s := hook.Start()
