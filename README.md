@@ -1,4 +1,4 @@
-# AoE MonkIt
+# AoE Monk It
 
 <img src="Monk_aoe2DE.webp" width="100">
 
